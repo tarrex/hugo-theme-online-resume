@@ -1,5 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
+enableRobotsTXT = "true"
 
 theme = "online-resume"
 [Params]

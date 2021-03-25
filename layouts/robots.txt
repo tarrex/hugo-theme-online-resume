@@ -1,5 +1,4 @@
 User-agent: *
-# robotstxt.org - if ENV production variable is false robots will be disallowed.
 {{ if .Site.Params.allow_search_engines }}
 Allow: /
 {{ else }}
