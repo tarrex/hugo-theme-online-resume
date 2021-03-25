@@ -5,5 +5,5 @@
   date_format = "2006-01-02"                # date format
   google_analytics = ""                     # your google analytics
   cloudflare_analytics = ""                 # your cloudflare analytics
-  allow_search_engines = false              # allow search engines indexing your resume
+  allow_search_engines = true               # allow search engines indexing your resume
   theme_color = "#1DA1F2"                   # your favorite theme color
