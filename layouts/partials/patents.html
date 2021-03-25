@@ -1,0 +1,14 @@
+{{ $patents := .Site.Data.data.patents }}
+{{ if (and $patents $patents.display) }}
+    <section class="section patents-section">
+
+	<div class="section-title">
+	    {{ $patents.title }}
+	</div>
+
+	<div class="details">
+	    {{ $patents.details | markdownify }}
+	</div>
+
+    </section>
+{{ end }}

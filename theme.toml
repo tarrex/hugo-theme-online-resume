@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Online-Resume Hugo Theme"
+license = "MIT"
+licenselink = "https://github.com/tarrex/hugo-theme-online-resume/blob/master/LICENSE"
+description = "online resume template based on Hugo."
+homepage = "https://github.com/tarrex/hugo-theme-online-resume"
+tags = ["resume", "responsive", "markdown"]
+features = ["markdown"]
+min_version = "0.41.0"
+
+[author]
+  name = "tarrex"
+  homepage = "https://tarrex.com"

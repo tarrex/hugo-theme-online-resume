@@ -1,0 +1,37 @@
+{{ $experiences := .Site.Data.data.experiences }}
+{{ if (and $experiences $experiences.display) }}
+    <section class="section experiences-section">
+	<div class="section-title">
+	    {{ $experiences.title }}
+	</div>
+
+	{{ range $experience := $experiences.items }}
+	    <div class="item">
+
+		<div class="upper-row">
+		    <div class="company">
+			{{ $experience.company }}
+			{{ if $experience.tag }}
+			    <small>[{{ $experience.tag }}]</small>
+			{{ end }}
+		    </div>
+		    <div class="time">{{ $experience.time }}</div>
+		</div>
+
+		<div class="upper-row">
+		    <div class="role">{{ $experience.role }}</div>
+		    <div class="location"><i class="fas fa-map-marker-alt"></i> {{ $experience.location }}</div>
+		</div>
+
+
+		{{ if $experience.details }}
+		    <div class="details">
+			{{ $experience.details | markdownify }}
+		    </div>
+		{{ end }}
+
+	    </div>
+	{{ end }}
+
+    </section>
+{{ end }}

@@ -1,0 +1,29 @@
+@media print
+   {
+    @page {
+	size: A4;
+	margin: 1cm 0.5cm;
+    }
+
+    @page :first {
+	margin-top: 0.5cm;
+    }
+
+    body {
+	padding: 0 !important;
+    }
+
+    a:after{
+	content: "" !important;
+    }
+
+    .wrapper {
+	.avatar {
+	    max-width: 100px !important;
+	}
+    }
+
+    footer {
+	display: none;
+    }
+}

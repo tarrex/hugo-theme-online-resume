@@ -1,0 +1,21 @@
+{{ define "main" }}
+    {{ if .Site.Params.open }}
+	<div class="wrapper">
+	    {{ partial "header.html" . }}
+	    {{ partial "profile.html" . }}
+	    {{ partial "experiences.html" . }}
+	    {{ partial "projects.html" . }}
+	    {{ partial "skills.html" . }}
+	    {{ partial "education.html" . }}
+	    {{ partial "certificates.html" . }}
+	    {{ partial "publications.html" . }}
+	    {{ partial "patents.html" . }}
+	    {{ partial "language.html" . }}
+	    {{ partial "interests.html" . }}
+	    {{ partial "evaluation.html" . }}
+	</div>
+	{{ partial "footer.html" . }}
+    {{ else }}
+	{{ partial "close.html" . }}
+    {{ end }}
+{{ end }}

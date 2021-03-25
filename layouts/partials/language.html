@@ -1,0 +1,21 @@
+{{ $languages := .Site.Data.data.languages }}
+{{ if (and $languages $languages.display) }}
+    <section class="section languages-section">
+
+	<div class="section-title">
+	    {{ $languages.title }}
+	</div>
+
+	<ul class="list-unstyled languages-list">
+	    {{ range $language := $languages.items }}
+		<li>
+		    {{ $language.idiom }}
+		    {{ if $language.level }}
+			<small>[{{ $language.level }}]</small>
+		    {{ end }}
+		</li>
+	    {{ end }}
+	</ul>
+
+    </section>
+{{ end }}

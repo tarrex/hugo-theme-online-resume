@@ -1,0 +1,9 @@
+[Params]
+  title = "Online Resume"
+  lang = "en"
+  open = true
+  date_format = "2006-01-02"
+  google_analytics = ""
+  cloudflare_analytics = ""
+  allow_search_engines = false
+  theme_color = "#1DA1F2"
