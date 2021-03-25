@@ -44,11 +44,11 @@ experiences:
       tag:
       location: Beijing
       details: |
-	Experience in this company:
-	+ First
-	+ Second
+        Experience in this company:
+        + First
+        + Second
 
-	...
+        ...
 
     - role: Backend Developer
       time: 2017.03 - 2018.03
@@ -56,11 +56,11 @@ experiences:
       tag: Remote, part-time
       location: Beijing
       details: |
-	Experience in this company:
-	+ First
-	+ Second
+        Experience in this company:
+        + First
+        + Second
 
-	...
+        ...
 
 projects:
   display: true
@@ -72,12 +72,12 @@ projects:
     - name: Foo
       link: https://www.google.com
       details: |
-	Project Foo's detail, you can write markdown format text.
+        Project Foo's detail, you can write markdown format text.
 
     - name: Bar
       link:
       details: |
-	Project Bar's detail, you can write markdown format text.
+        Project Bar's detail, you can write markdown format text.
 
 skills:
   display: true
@@ -106,22 +106,22 @@ education:
       major: Machine Learning
       degree: Master
       details: |
-	Experience in this university:
-	+ First
-	+ Second
+        Experience in this university:
+        + First
+        + Second
 
-	...
+        ...
 
     - university: Example University
       time: 2011 - 2015
       major: Computer Science
       degree: Bachelor
       details: |
-	Experience in this university:
-	+ First
-	+ Second
+        Experience in this university:
+        + First
+        + Second
 
-	...
+        ...
 
 certificates:
   display: true
@@ -132,7 +132,7 @@ certificates:
       time: 2020
       link:
       details: |
-	It's my Course Foo certificate by coursera.
+        It's my Course Foo certificate by coursera.
     - name: Course Bar
       authority: Coursera
       time: 2020
