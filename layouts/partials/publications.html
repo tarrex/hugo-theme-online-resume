@@ -1,38 +1,38 @@
 {{ $publications := .Site.Data.data.publications }}
 {{ if (and $publications $publications.display) }}
-    <section class="section publications-section">
+<section class="section publications-section">
 
-	<div class="section-title">
-	    {{ $publications.title }}
-	</div>
+    <div class="section-title">
+        {{ $publications.title }}
+    </div>
 
-	{{ if $publications.intro }}
-	    <div class="intro">
-		{{ $publications.intro | markdownify }}
-	    </div>
-	{{ end }}
+    {{ if $publications.intro }}
+    <div class="intro">
+        {{ $publications.intro | markdownify }}
+    </div>
+    {{ end }}
 
-	{{ range $publication := $publications.items }}
-	    <div class="item">
-		{{ if $publication.title }}
-		    <p class="title">
-			{{ if $publication.link }}
-			    <a href="{{ $publication.link }}" target="_blank">{{ $publication.title }}</a>
-			{{ else }}
-			    {{ $publication.title }}
-			{{ end }}
-		    </p>
+    {{ range $publication := $publications.items }}
+    <div class="item">
+        {{ if $publication.title }}
+        <p class="title">
+        {{ if $publication.link }}
+            <a href="{{ $publication.link }}" target="_blank">{{ $publication.title }}</a>
+        {{ else }}
+            {{ $publication.title }}
+        {{ end }}
+        </p>
 
-		    {{ if $publication.authors }}
-			<div class="authors">{{ $publication.authors }}</div>
-		    {{ end }}
+        {{ if $publication.authors }}
+        <div class="authors">{{ $publication.authors }}</div>
+        {{ end }}
 
-		    {{ if $publication.conference }}
-			<div class="conference">{{ $publication.conference }}</div>
-		    {{ end }}
-		{{ end }}
-	    </div>
-	{{ end }}
+        {{ if $publication.conference }}
+        <div class="conference">{{ $publication.conference }}</div>
+        {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
 
-    </section>
+</section>
 {{ end }}

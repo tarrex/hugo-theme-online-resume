@@ -1,22 +1,22 @@
 {{ $interests := .Site.Data.data.interests }}
 {{ if and $interests $interests.display }}
-    <section class="section interests-section">
+<section class="section interests-section">
 
-	<div class="section-title">
-	    {{ $interests.title }}
-	</div>
+    <div class="section-title">
+        {{ $interests.title }}
+    </div>
 
-	<ul class="list-unstyled interests-list">
-	    {{ range $interest := $interests.items }}
+    <ul class="list-unstyled interests-list">
+        {{ range $interest := $interests.items }}
 
-		{{ if $interest.link }}
-		    <li><a href="{{ $interest.link }}" target="_blank">{{ $interest.item }}</a></li>
-		{{ else }}
-		    <li>{{ $interest.item }}</li>
-		{{ end }}
+    	{{ if $interest.link }}
+    	<li><a href="{{ $interest.link }}" target="_blank">{{ $interest.item }}</a></li>
+    	{{ else }}
+    	<li>{{ $interest.item }}</li>
+    	{{ end }}
 
-	    {{ end }}
-	</ul>
+        {{ end }}
+    </ul>
 
-    </section>
+</section>
 {{ end }}

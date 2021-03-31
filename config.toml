@@ -1,9 +1,0 @@
-[Params]
-  title = "Online Resume"                   # title of your resume
-  lang = "en"                               # html lang
-  open = true                               # open or close your site
-  date_format = "2006-01-02"                # date format
-  google_analytics = ""                     # your google analytics
-  cloudflare_analytics = ""                 # your cloudflare analytics
-  allow_search_engines = true               # allow search engines indexing your resume
-  theme_color = "#1DA1F2"                   # your favorite theme color

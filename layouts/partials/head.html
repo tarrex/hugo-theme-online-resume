@@ -1,40 +1,38 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ if .Site.Params.open }}{{ .Site.Params.title }}{{ end }}">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ if .Site.Params.open }}{{ .Site.Title }}{{ end }}">
 
-    {{ if .Site.Params.open }}
-        <title>{{ .Site.Params.title }}</title>
-    {{ else }}
-        <title>Online Resume</title>
-    {{ end }}
+{{ if .Site.Params.open }}
+<title>{{ .Site.Title }}</title>
+{{ else }}
+<title>Online Resume</title>
+{{ end }}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
-    {{ $themeScss := "sass/main.scss" }}
-    {{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed") }}
-    {{ $themeCss := resources.Get $themeScss | resources.ExecuteAsTemplate $themeScss . | toCSS $options | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $themeCss.RelPermalink }}" integrity="{{ $themeCss.Data.Integrity }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+{{ $themeScss := "sass/main.scss" }}
+{{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed") }}
+{{ $themeCss := resources.Get $themeScss | resources.ExecuteAsTemplate $themeScss . | toCSS $options | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $themeCss.RelPermalink }}" integrity="{{ $themeCss.Data.Integrity }}">
 
-    {{ if .Site.Params.google_analytics }}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}"></script>
-    <script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag() {dataLayer.push(arguments);}
-	gtag('js', new Date());
+{{ if .Site.Params.analytics.google }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.analytics.google }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-	gtag('config', '{{ .Site.Params.google_analytics }}');
-    </script>
-    {{ end }}
+    gtag('config', '{{ .Site.Params.analytics.google }}');
+</script>
+{{ end }}
 
-    {{ if .Site.Params.cloudflare_analytics }}
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-	data-cf-beacon='{"token": "{{ .Site.Params.cloudflare_analytics }}"}'></script>
-    <!-- End Cloudflare Web Analytics -->
-    {{ end }}
-</head>
+{{ if .Site.Params.analytics.cloudflare }}
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+    data-cf-beacon='{"token": "{{ .Site.Params.analytics.cloudflare }}"}'></script>
+<!-- End Cloudflare Web Analytics -->
+{{ end }}

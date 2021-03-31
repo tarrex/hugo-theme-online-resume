@@ -1,32 +1,32 @@
 {{ $education := .Site.Data.data.education }}
 {{ if (and $education $education.display) }}
-    <section class="section educations-section">
+<section class="section educations-section">
 
-	<div class="section-title">
-	    {{ $education.title }}
-	</div>
+    <div class="section-title">
+        {{ $education.title }}
+    </div>
 
-	{{ range $graduation := $education.items }}
-	    <div class="item">
+    {{ range $graduation := $education.items }}
+    <div class="item">
 
-		<div class="upper-row">
-		    <div class="university">{{ $graduation.university }}</div>
-		    <div class="time">{{ $graduation.time }}</div>
-		</div>
+        <div class="upper-row">
+            <div class="university">{{ $graduation.university }}</div>
+            <div class="time">{{ $graduation.time }}</div>
+        </div>
 
-		<div class="upper-row">
-		    <div class="major">{{ $graduation.major }}</div>
-		    <div class="degree"><i class="fas fa-graduation-cap"></i> {{ $graduation.degree }}</div>
-		</div>
+        <div class="upper-row">
+            <div class="major">{{ $graduation.major }}</div>
+            <div class="degree"><i class="fas fa-graduation-cap"></i> {{ $graduation.degree }}</div>
+        </div>
 
-		{{ if $graduation.details }}
-		    <div class="details">
-			{{ $graduation.details | markdownify }}
-		    </div>
-		{{ end }}
+        {{ if $graduation.details }}
+            <div class="details">
+        	    {{ $graduation.details | markdownify }}
+            </div>
+        {{ end }}
 
-	    </div>
-	{{ end }}
+    </div>
+    {{ end }}
 
-    </section>
+</section>
 {{ end }}

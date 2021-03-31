@@ -1,36 +1,36 @@
 {{ $projects := .Site.Data.data.projects }}
 {{ if (and $projects $projects.display) }}
-    <section class="section projects-section">
+<section class="section projects-section">
 
-	<div class="section-title">
-	    {{ $projects.title }}
-	</div>
+    <div class="section-title">
+        {{ $projects.title }}
+    </div>
 
-	{{ if $projects.intro }}
-	    <div class="intro">
-		<p>{{ $projects.intro | markdownify }}</p>
-	    </div>
-	{{ end }}
+    {{ if $projects.intro }}
+    <div class="intro">
+        <p>{{ $projects.intro | markdownify }}</p>
+    </div>
+    {{ end }}
 
-	{{ range $project := $projects.items }}
-	    <div class="item">
-		{{ if $project.name }}
-		    <p class="name">
-			{{ if $project.link }}
-			    <a href="{{ $project.link }}" target="_blank">{{ $project.name }}</a>
-			{{ else }}
-			    {{ $project.name }}
-			{{ end }}
-		    </p>
+    {{ range $project := $projects.items }}
+    <div class="item">
+        {{ if $project.name }}
+        <p class="name">
+        {{ if $project.link }}
+            <a href="{{ $project.link }}" target="_blank">{{ $project.name }}</a>
+        {{ else }}
+            {{ $project.name }}
+        {{ end }}
+        </p>
 
-		    {{ if $project.details }}
-			<div class="details">
-			    {{ $project.details | markdownify }}
-			</div>
-		    {{ end }}
-		{{ end }}
-	    </div>
-	{{ end }}
+        {{ if $project.details }}
+        <div class="details">
+            {{ $project.details | markdownify }}
+        </div>
+        {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
 
-    </section>
+</section>
 {{ end }}

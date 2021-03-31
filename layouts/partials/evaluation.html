@@ -1,14 +1,14 @@
 {{ $evaluation := .Site.Data.data.evaluation }}
 {{ if (and $evaluation $evaluation.display) }}
-    <section class="section evaluation-section">
+<section class="section evaluation-section">
 
-	<div class="section-title">
-	    {{ $evaluation.title }}
-	</div>
+    <div class="section-title">
+        {{ $evaluation.title }}
+    </div>
 
-	<div class="details">
-	    {{ $evaluation.details | markdownify }}
-	</div>
+    <div class="details">
+        {{ $evaluation.details | markdownify }}
+    </div>
 
-    </section>
+</section>
 {{ end }}

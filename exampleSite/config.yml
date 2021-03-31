@@ -1,0 +1,15 @@
+baseURL:
+languageCode: en
+enableRobotsTXT: true
+
+title: Online Resume
+theme: online-resume
+
+params:
+  open: true                      # open or close your site
+  date_format: 2006-01-02         # date format
+  theme_color: '#1DA1F2'          # your favorite theme color
+  allow_search_engines: true      # allow search engines indexing your resume
+  analytics:
+    google:                       # your google analytics
+    cloudflare:                   # your cloudflare analytics

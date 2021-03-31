@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Params.lang | default "en" }}">
-    {{- partial "head.html" . -}}
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+    <head>
+        {{- partial "head.html" . -}}
+    </head>
+    
     <body>
-	{{- block "main" . }}{{- end }}
+	    {{- block "main" . }}{{- end }}
     </body>
 </html>

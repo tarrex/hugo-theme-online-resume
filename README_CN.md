@@ -25,9 +25,9 @@
   + `cd resume && git init`
   + `git submodule add git@github.com:tarrex/hugo-theme-online-resume.git themes/online-resume`
 
-+ 复制`config.toml`和`data.yml`两个文件到新网站。
++ 复制`config.yml`和`data.yml`两个文件到新网站。
 
-  + `cp themes/online-resume/exampleSite/config.toml .`
+  + `cp themes/online-resume/exampleSite/config.yml .`
   + `cp themes/online-resume/exampleSite/data/data.yml ./data`
 
 + 编辑`data/data.yml`文件来更新简历。

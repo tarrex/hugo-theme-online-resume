@@ -25,9 +25,9 @@ Features:
   + `cd resume && git init`
   + `git submodule add git@github.com:tarrex/hugo-theme-online-resume.git themes/online-resume`
 
-+ Copy `config.toml` and `data.yml` files.
++ Copy `config.yml` and `data.yml` files.
 
-  + `cp themes/online-resume/exampleSite/config.toml .`
+  + `cp themes/online-resume/exampleSite/config.yml .`
   + `cp themes/online-resume/exampleSite/data/data.yml ./data`
 
 + Edit `data/data.yml` file to update your resume.
