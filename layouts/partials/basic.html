@@ -1,0 +1,46 @@
+{{ $basic := .Site.Data.data.basic }}
+<section class="basic">
+
+    {{ if .Site.Params.open | and $basic.avatar.path | and $basic.avatar.display }}
+    <div class="avatar">
+        <img src='/images/{{ $basic.avatar.path }}' alt="avatar">
+    </div>
+
+    <div class="intro">
+        {{ if $basic.name }}
+        <div class="header">
+            <h2 class="name">{{ $basic.name }}</h2>
+            {{ if $basic.title }}
+            <h3 class="title">{{ $basic.title }}</h3>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <div class="contact">
+
+            {{ partial "contact.html" . }}
+
+        </div>
+    </div>
+
+    {{ else }}
+
+    <div class="intro text-center">
+        {{ if $basic.name }}
+        <div class="header">
+            <h2 class="name">{{ $basic.name }}</h2>
+            {{ if $basic.title }}
+            <h3 class="title">{{ $basic.title }}</h3>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <div class="contact">
+
+            {{ partial "contact.html" . }}
+
+        </div>
+    </div>
+    {{ end }}
+
+</section>

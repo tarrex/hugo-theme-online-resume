@@ -39,7 +39,7 @@ small {
     padding: $spacing-unit * 2;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
-    .section {
+    section {
         margin-bottom: $spacing-unit / 4;
 
         .section-title {
@@ -53,37 +53,58 @@ small {
             border-bottom: 1px dashed rgba($theme-color, 25%);
         }
 
-        .markdown {
-            ul,
-            ol {
-                margin-bottom: $spacing-unit / 4;
-                padding-inline-start: $spacing-unit;
+        .section-content {
+            .markdown {
+                ul,
+                ol {
+                    margin-bottom: $spacing-unit / 4;
+                    padding-inline-start: $spacing-unit;
+                }
             }
-        }
 
-        // .item {
-        //     padding-bottom: $spacing-unit / 4;
-        // }
+            // .item {
+            //     padding-bottom: $spacing-unit / 4;
+            // }
+        }
 
         .upper-row {
             position: relative;
             overflow: hidden;
             margin-bottom: 2px;
+
+            .company,
+            .certificate,
+            .university {
+                font-weight: $base-font-weight * 1.75;
+            }
+
+            .role,
+            .authority,
+            .major {
+                font-style: italic;
+            }
+
+            .time,
+            .location,
+            .degree {
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: $text-grey;
+            }
         }
     }
 
-    .intro-section {
-        .avatar-container {
-            .avatar {
-                float: right;
-                max-width: 100px;
-                margin-bottom: $spacing-unit;
-                border: 0px solid $wrapper-color;
-                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            }
+    .basic {
+        .avatar img {
+            float: right;
+            max-width: 100px;
+            margin-bottom: $spacing-unit;
+            border: 0px solid $wrapper-color;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         }
 
-        .intro-container {
+        .intro {
             .name {
                 font-size: $huge-font-size;
                 font-weight: $base-font-weight * 2,25;
@@ -99,7 +120,7 @@ small {
                 margin-bottom: $spacing-unit / 4;
             }
 
-            .contact-list {
+            .contact ul {
                 margin-bottom: $spacing-unit / 4;
 
                 li {
@@ -115,75 +136,22 @@ small {
         }
     }
 
-    .experiences-section {
-        .company {
-            font-weight: $base-font-weight * 1.75;
-        }
-
-        .role {
-            font-style: italic;
-        }
-
-        .time,
-        .location {
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: $text-grey;
-        }
-    }
-
-    .certificates-section {
-        .name {
-            font-weight: $base-font-weight * 1.75;
-        }
-
-        .authority {
-            font-style: italic;
-        }
-
-        .time {
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: $text-grey;
-        }
-    }
-
-    .educations-section {
-        .university {
-            font-weight: $base-font-weight * 1.75;
-        }
-
-        .major {
-            font-style: italic;
-        }
-
-        .time,
-        .degree {
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: $text-grey;
-        }
-    }
-
-    .projects-section {
-        .name {
+    .projects {
+        .project {
             font-weight: $base-font-weight * 1.75;
             color: $text-color;
             margin-bottom: 1px;
         }
     }
 
-    .skills-section {
+    .skills {
         .bar {
             max-width: 80%;
             --labels-size: 20%;
         }
     }
 
-    .publications-section {
+    .publications {
         .title {
             font-weight: $base-font-weight * 1.75;
             color: $text-color;
@@ -195,17 +163,19 @@ small {
         }
     }
 
-    .languages-section .languages-list,
-    .interests-section .interests-list {
-        margin-bottom: $spacing-unit / 4;
+    .languages,
+    .interests {
+        ul {
+            margin-bottom: $spacing-unit / 4;
 
-        li {
-            display: inline;
-            white-space: nowrap;
+            li {
+                display: inline;
+                white-space: nowrap;
 
-            &:not(:last-child)::after {
-                content: '/';
-                margin: 0 0.25em;
+                &:not(:last-child)::after {
+                    content: '/';
+                    margin: 0 0.25em;
+                }
             }
         }
     }
