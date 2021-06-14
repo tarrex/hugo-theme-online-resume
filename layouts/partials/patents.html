@@ -1,12 +1,12 @@
 {{ $patents := .Site.Data.data.patents }}
-{{ if (and $patents $patents.display) }}
+{{ if $patents | and $patents.display }}
 <section class="section patents-section">
 
     <div class="section-title">
         {{ $patents.title }}
     </div>
 
-    <div class="details">
+    <div class="details markdown">
         {{ $patents.details | markdownify }}
     </div>
 

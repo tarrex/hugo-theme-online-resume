@@ -1,5 +1,5 @@
 {{ $certificates := .Site.Data.data.certificates }}
-{{ if (and $certificates $certificates.display) }}
+{{ if $certificates | and $certificates.display }}
 <section class="section certificates-section">
 
     <div class="section-title">
@@ -8,29 +8,29 @@
 
     <div class="row">
         {{ range $certificate := $certificates.items }}
-    	<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-    	    <div class="item">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <div class="item">
 
-    		<div class="upper-row">
-    		    {{ if $certificate.link }}
-    			<div class="name"><a href="{{ $certificate.link }}">{{ $certificate.name }}</a></div>
-    		    {{ else }}
-    			<div class="name">{{ $certificate.name }}</div>
-    		    {{ end }}
-    		</div>
+                <div class="upper-row">
+                    {{ if $certificate.link }}
+                    <div class="name"><a href="{{ $certificate.link }}">{{ $certificate.name }}</a></div>
+                    {{ else }}
+                    <div class="name">{{ $certificate.name }}</div>
+                    {{ end }}
+                </div>
 
-    		<div class="upper-row">
-    		    <div class="authority">{{ $certificate.authority }}</div>
-    		    <div class="time">{{ $certificate.time }}</div>
-    		</div>
+                <div class="upper-row">
+                    <div class="authority">{{ $certificate.authority }}</div>
+                    <div class="time">{{ $certificate.time }}</div>
+                </div>
 
-    		{{ if $certificate.details }}
-    		<div class="details">
-    		    {{ $certificate.details | markdownify }}
-    		</div>
-    		{{ end }}
-    	    </div>
-    	</div>
+                {{ if $certificate.details }}
+                <div class="details markdown">
+                    {{ $certificate.details | markdownify }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
         {{ end }}
     </div>
 </section>

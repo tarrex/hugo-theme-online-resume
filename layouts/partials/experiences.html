@@ -1,5 +1,5 @@
 {{ $experiences := .Site.Data.data.experiences }}
-{{ if (and $experiences $experiences.display) }}
+{{ if $experiences | and $experiences.display }}
 <section class="section experiences-section">
     <div class="section-title">
         {{ $experiences.title }}
@@ -10,10 +10,10 @@
 
         <div class="upper-row">
             <div class="company">
-        	    {{ $experience.company }}
-        	    {{ if $experience.tag }}
-        	    <small>[{{ $experience.tag }}]</small>
-        	    {{ end }}
+                {{ $experience.company }}
+                {{ if $experience.tag }}
+                <small>[{{ $experience.tag }}]</small>
+                {{ end }}
             </div>
             <div class="time">{{ $experience.time }}</div>
         </div>
@@ -25,8 +25,8 @@
 
 
         {{ if $experience.details }}
-        <div class="details">
-        	{{ $experience.details | markdownify }}
+        <div class="details markdown">
+            {{ $experience.details | markdownify }}
         </div>
         {{ end }}
 

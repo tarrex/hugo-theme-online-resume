@@ -1,5 +1,5 @@
 {{ $education := .Site.Data.data.education }}
-{{ if (and $education $education.display) }}
+{{ if $education | and $education.display }}
 <section class="section educations-section">
 
     <div class="section-title">
@@ -20,9 +20,9 @@
         </div>
 
         {{ if $graduation.details }}
-            <div class="details">
-        	    {{ $graduation.details | markdownify }}
-            </div>
+        <div class="details markdown">
+            {{ $graduation.details | markdownify }}
+        </div>
         {{ end }}
 
     </div>

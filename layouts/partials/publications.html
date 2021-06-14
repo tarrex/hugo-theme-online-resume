@@ -1,5 +1,5 @@
 {{ $publications := .Site.Data.data.publications }}
-{{ if (and $publications $publications.display) }}
+{{ if $publications | and $publications.display }}
 <section class="section publications-section">
 
     <div class="section-title">
@@ -7,7 +7,7 @@
     </div>
 
     {{ if $publications.intro }}
-    <div class="intro">
+    <div class="intro markdown">
         {{ $publications.intro | markdownify }}
     </div>
     {{ end }}
@@ -16,11 +16,11 @@
     <div class="item">
         {{ if $publication.title }}
         <p class="title">
-        {{ if $publication.link }}
+            {{ if $publication.link }}
             <a href="{{ $publication.link }}" target="_blank">{{ $publication.title }}</a>
-        {{ else }}
+            {{ else }}
             {{ $publication.title }}
-        {{ end }}
+            {{ end }}
         </p>
 
         {{ if $publication.authors }}

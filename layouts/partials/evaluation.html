@@ -1,12 +1,12 @@
 {{ $evaluation := .Site.Data.data.evaluation }}
-{{ if (and $evaluation $evaluation.display) }}
+{{ if $evaluation | and $evaluation.display }}
 <section class="section evaluation-section">
 
     <div class="section-title">
         {{ $evaluation.title }}
     </div>
 
-    <div class="details">
+    <div class="details markdown">
         {{ $evaluation.details | markdownify }}
     </div>
 

@@ -1,12 +1,12 @@
 {{ $profile := .Site.Data.data.profile }}
-{{ if (and $profile $profile.display) }}
+{{ if $profile | and $profile.display }}
 <section class="section profile-section">
 
     <div class="section-title">
         {{ $profile.title }}
     </div>
 
-    <div class="details">
+    <div class="details markdown">
         {{ $profile.details | markdownify }}
     </div>
 

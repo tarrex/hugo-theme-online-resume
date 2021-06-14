@@ -1,5 +1,5 @@
 {{ $languages := .Site.Data.data.languages }}
-{{ if (and $languages $languages.display) }}
+{{ if $languages | and $languages.display }}
 <section class="section languages-section">
 
     <div class="section-title">
@@ -8,12 +8,12 @@
 
     <ul class="list-unstyled languages-list">
         {{ range $language := $languages.items }}
-    	<li>
-    	    {{ $language.idiom }}
-    	    {{ if $language.level }}
-    		<small>[{{ $language.level }}]</small>
-    	    {{ end }}
-    	</li>
+        <li>
+            {{ $language.idiom }}
+            {{ if $language.level }}
+            <small>[{{ $language.level }}]</small>
+            {{ end }}
+        </li>
         {{ end }}
     </ul>
 

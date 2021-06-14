@@ -1,4 +1,9 @@
-/* ======= Base ======= */
+html {
+    font-size: $base-font-size;
+    scroll-behavior: smooth;
+    touch-action: manipulation;
+}
+
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
@@ -9,14 +14,10 @@ body {
 }
 
 a {
-    color: $theme-color;
-
+    &,
+    &:visited,
     &:hover {
-        text-decoration: none;
         color: darken($theme-color, 10%);
-    }
-
-    &:focus {
         text-decoration: none;
     }
 }
@@ -26,13 +27,17 @@ p {
     margin-bottom: $spacing-unit / 4;
 }
 
+small {
+    font-weight: $base-font-weight;
+}
+
 .wrapper {
+    position: relative;
     background: $wrapper-color;
     max-width: $content-width;
     margin: 0 auto;
-    position: relative;
-    @include box-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
     padding: $spacing-unit * 2;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
     .section {
         margin-bottom: $spacing-unit / 4;
@@ -40,7 +45,7 @@ p {
         .section-title {
             text-transform: uppercase;
             font-size: $large-font-size;
-            font-weight: 500;
+            font-weight: $base-font-weight * 1.25;
             color: $theme-color;
             position: relative;
             margin-top: 0;
@@ -48,17 +53,23 @@ p {
             border-bottom: 1px dashed rgba($theme-color, 25%);
         }
 
-        .intro,
-        .details {
-            ul {
+        .markdown {
+            ul,
+            ol {
                 margin-bottom: $spacing-unit / 4;
-                padding-left: $spacing-unit;
+                padding-inline-start: $spacing-unit;
             }
         }
 
         // .item {
         //     padding-bottom: $spacing-unit / 4;
         // }
+
+        .upper-row {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2px;
+        }
     }
 
     .intro-section {
@@ -75,7 +86,7 @@ p {
         .intro-container {
             .name {
                 font-size: $huge-font-size;
-                font-weight: 900;
+                font-weight: $base-font-weight * 2,25;
                 margin-top: 0;
                 margin-bottom: $spacing-unit / 4;
             }
@@ -105,14 +116,12 @@ p {
     }
 
     .experiences-section {
-        .upper-row {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 2px;
+        .company {
+            font-weight: $base-font-weight * 1.75;
         }
 
-        .company {
-            font-weight: 700;
+        .role {
+            font-style: italic;
         }
 
         .time,
@@ -122,16 +131,46 @@ p {
             top: 0;
             color: $text-grey;
         }
+    }
 
-        .role {
+    .certificates-section {
+        .name {
+            font-weight: $base-font-weight * 1.75;
+        }
+
+        .authority {
             font-style: italic;
+        }
+
+        .time {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: $text-grey;
+        }
+    }
+
+    .educations-section {
+        .university {
+            font-weight: $base-font-weight * 1.75;
+        }
+
+        .major {
+            font-style: italic;
+        }
+
+        .time,
+        .degree {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: $text-grey;
         }
     }
 
     .projects-section {
         .name {
-            font-weight: 700;
-
+            font-weight: $base-font-weight * 1.75;
             color: $text-color;
             margin-bottom: 1px;
         }
@@ -144,96 +183,30 @@ p {
         }
     }
 
-    .certificates-section {
-        .upper-row {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 2px;
-        }
-
-        .name {
-            font-weight: 700;
-        }
-
-        .time {
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: $text-grey;
-        }
-
-        .authority {
-            font-style: italic;
-        }
-    }
-
-    .educations-section {
-        .upper-row {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 2px;
-        }
-
-        .university {
-            font-weight: 700;
-        }
-
-        .time,
-        .degree {
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: $text-grey;
-        }
-
-        .major {
-            font-style: italic;
-        }
-    }
-
-    .languages-section {
-        .languages-list {
-            margin-bottom: $spacing-unit / 4;
-
-            li {
-                display: inline;
-                white-space: nowrap;
-
-                &:not(:last-child)::after {
-                    content: '/';
-                    margin: 0 0.25em;
-                }
-            }
-        }
-    }
-
-    .interests-section {
-        .interests-list {
-            margin-bottom: $spacing-unit / 4;
-
-            li {
-                display: inline;
-                white-space: nowrap;
-
-                &:not(:last-child)::after {
-                    content: '/';
-                    margin: 0 0.25em;
-                }
-            }
-        }
-    }
-
     .publications-section {
         .title {
-            font-weight: 700;
-
+            font-weight: $base-font-weight * 1.75;
             color: $text-color;
             margin-bottom: 1px;
         }
 
         .authors {
             font-style: italic;
-            margin-bottom: 1px;
+        }
+    }
+
+    .languages-section .languages-list,
+    .interests-section .interests-list {
+        margin-bottom: $spacing-unit / 4;
+
+        li {
+            display: inline;
+            white-space: nowrap;
+
+            &:not(:last-child)::after {
+                content: '/';
+                margin: 0 0.25em;
+            }
         }
     }
 }
@@ -243,9 +216,9 @@ p {
 
     .copyright {
         color: $text-color-secondary;
-    }
 
-    .fa-heart {
-        color: $heart;
+        .fa-heart {
+            color: $heart;
+        }
     }
 }

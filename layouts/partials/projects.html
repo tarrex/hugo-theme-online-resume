@@ -1,5 +1,5 @@
 {{ $projects := .Site.Data.data.projects }}
-{{ if (and $projects $projects.display) }}
+{{ if $projects | and $projects.display }}
 <section class="section projects-section">
 
     <div class="section-title">
@@ -7,8 +7,8 @@
     </div>
 
     {{ if $projects.intro }}
-    <div class="intro">
-        <p>{{ $projects.intro | markdownify }}</p>
+    <div class="intro markdown">
+        {{ $projects.intro | markdownify }}
     </div>
     {{ end }}
 
@@ -24,7 +24,7 @@
         </p>
 
         {{ if $project.details }}
-        <div class="details">
+        <div class="details markdown">
             {{ $project.details | markdownify }}
         </div>
         {{ end }}

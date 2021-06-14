@@ -1,29 +1,29 @@
 {{ $skills := .Site.Data.data.skills }}
-{{ if (and $skills $skills.display) }}
+{{ if $skills | and $skills.display }}
 <section class="section skills-section">
 
     <div class="section-title">
         {{ $skills.title }}
     </div>
 
-    <div class="details">
+    <div class="details markdown">
         {{ $skills.details | markdownify }}
     </div>
 
     {{ if $skills.levels }}
     {{ $count := len $skills.levels}}
-    {{ if (gt $count 0) }}
+    {{ if gt $count 0 }}
     <div class="levels">
         <table class="charts-css bar stacked show-labels data-spacing-5" style="height: calc({{ $count }} * 25px)">
-    	    <tbody>
-    	        {{ range $level := $skills.levels }}
-    	    	<tr>
-    	    	    <th scope="row"> {{ $level.name }} </th>
-    	    	    <td style="--size: calc( {{ $level.level }} / 100 ); --color: {{ $.Site.Params.theme_color }}90;"></td>
-    	    	    <td style="--size: calc( ( 100 - {{ $level.level }} ) / 100 ); --color: {{ $.Site.Params.theme_color }}40;"></td>
-    	    	</tr>
-    	        {{ end }}
-    	    </tbody>
+            <tbody>
+                {{ range $level := $skills.levels }}
+                <tr>
+                    <th scope="row"> {{ $level.name }} </th>
+                    <td style="--size: calc( {{ $level.level }} / 100 ); --color: {{ $.Site.Params.theme_color }}90;"></td>
+                    <td style="--size: calc( ( 100 - {{ $level.level }} ) / 100 ); --color: {{ $.Site.Params.theme_color }}40;"></td>
+                </tr>
+                {{ end }}
+            </tbody>
         </table>
     </div>
     {{ end }}
