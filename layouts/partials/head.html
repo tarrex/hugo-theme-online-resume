@@ -4,7 +4,7 @@
 <meta name="description" content="{{ if .Site.Params.open }}{{ .Site.Title }}{{ end }}">
 
 {{ if .Site.Params.open }}
-<title>{{ .Site.Title }}</title>
+<title>{{ .Site.Title | safeHTML }}</title>
 {{ else }}
 <title>Online Resume</title>
 {{ end }}

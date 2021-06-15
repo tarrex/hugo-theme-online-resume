@@ -1,7 +1,7 @@
 {{ $basic := .Site.Data.data.basic }}
 <section class="basic">
 
-    {{ if .Site.Params.open | and $basic.avatar.path | and $basic.avatar.display }}
+    {{ if $basic.avatar.path | and $basic.avatar.display }}
     <div class="avatar">
         <img src='/images/{{ $basic.avatar.path }}' alt="avatar">
     </div>
@@ -23,14 +23,12 @@
 
     {{ else }}
 
-    <div class="intro text-center">
+    <div class="header text-center">
         {{ if $basic.name }}
-        <div class="header">
-            <h2 class="name">{{ $basic.name }}</h2>
-            {{ if $basic.title }}
-            <h3 class="title">{{ $basic.title }}</h3>
-            {{ end }}
-        </div>
+        <h2 class="name">{{ $basic.name }}</h2>
+        {{ if $basic.title }}
+        <h3 class="title">{{ $basic.title }}</h3>
+        {{ end }}
         {{ end }}
 
         <div class="contact">
