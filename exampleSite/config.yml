@@ -1,6 +1,7 @@
 baseURL:
-languageCode: en
+disableKinds: [section, taxonomy, term, RSS, sitemap]
 enableRobotsTXT: true
+languageCode: en
 
 title: Online &hearts; Resume
 theme: online-resume
