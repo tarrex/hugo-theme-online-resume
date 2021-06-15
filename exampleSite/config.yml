@@ -1,5 +1,5 @@
 baseURL:
-disableKinds: [section, taxonomy, term, RSS, sitemap]
+disableKinds: [section, taxonomy, term, RSS, sitemap, 404]
 enableRobotsTXT: true
 languageCode: en
 
