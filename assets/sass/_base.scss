@@ -61,10 +61,6 @@ small {
                     padding-inline-start: $spacing-unit;
                 }
             }
-
-            // .item {
-            //     padding-bottom: $spacing-unit / 4;
-            // }
         }
 
         .upper-row {
@@ -90,7 +86,7 @@ small {
                 position: absolute;
                 right: 0;
                 top: 0;
-                color: $text-grey;
+                color: $text-gray-color;
             }
         }
     }
@@ -113,7 +109,7 @@ small {
             }
 
             .title {
-                color: $text-color-secondary;
+                color: $text-second-color;
                 font-size: $middle-font-size;
                 font-weight: $base-font-weight;
                 margin-top: 0;
@@ -185,10 +181,10 @@ small {
     padding-top: $spacing-unit / 2;
 
     .copyright {
-        color: $text-color-secondary;
+        color: $text-second-color;
 
         .fa-heart {
-            color: $heart;
+            color: $heart-color;
         }
     }
 }

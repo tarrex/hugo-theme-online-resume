@@ -8,8 +8,10 @@
 
     <div class="section-content">
         {{ if $publications.intro }}
-        <div class="intro markdown">
-            {{ $publications.intro | markdownify }}
+        <div class="intro">
+            <div class="markdown">
+                {{ $publications.intro | markdownify }}
+            </div>
         </div>
         {{ end }}
 
