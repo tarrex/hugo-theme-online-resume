@@ -7,6 +7,20 @@
     .wrapper {
         padding: $spacing-unit / 2;
 
+        section {
+            .upper-row {
+                margin-bottom: 0;
+
+                .time,
+                .location,
+                .degree {
+                    position: static;
+                    display: block;
+                    margin-top: $spacing-unit / 4;
+                }
+            }
+        }
+
         .basic {
             .avatar img {
                 float: none;
@@ -15,7 +29,7 @@
                 border-radius: 100%;
             }
 
-            .intro {
+            .header {
                 text-align: center;
 
                 .contact ul {
@@ -31,36 +45,10 @@
             }
         }
 
-        .experiences {
-            .upper-row {
-                margin-bottom: 0;
-            }
-
-            .time,
-            .location {
-                position: static;
-                display: block;
-                margin-top: $spacing-unit / 4;
-            }
-        }
-
         .skills {
             .bar {
                 max-width: 100%;
                 --labels-size: 30%;
-            }
-        }
-
-        .educations {
-            .upper-row {
-                margin-bottom: 0;
-            }
-
-            .time,
-            .degree {
-                position: static;
-                display: block;
-                margin-top: $spacing-unit / 4;
             }
         }
 

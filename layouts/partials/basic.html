@@ -6,14 +6,12 @@
         <img src='/images/{{ $basic.avatar.path }}' alt="avatar">
     </div>
 
-    <div class="intro">
+    <div class="header">
         {{ if $basic.name }}
-        <div class="header">
-            <h2 class="name">{{ $basic.name }}</h2>
-            {{ if $basic.title }}
-            <h3 class="title">{{ $basic.title }}</h3>
-            {{ end }}
-        </div>
+        <h2 class="name">{{ $basic.name }}</h2>
+        {{ if $basic.title }}
+        <h3 class="title">{{ $basic.title }}</h3>
+        {{ end }}
         {{ end }}
 
         <div class="contact">

@@ -49,7 +49,7 @@ small {
             color: $theme-color;
             position: relative;
             margin-top: 0;
-            margin-bottom: $spacing-unit / 2;
+            margin-bottom: $spacing-unit / 4;
             border-bottom: 1px dashed rgba($theme-color, 25%);
         }
 
@@ -100,7 +100,7 @@ small {
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         }
 
-        .intro {
+        .header {
             .name {
                 font-size: $huge-font-size;
                 font-weight: $base-font-weight * 2,25;
