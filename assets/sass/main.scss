@@ -18,7 +18,7 @@ $spacing-unit:     20px !default;
 $content-width:    1000px !default;
 
 // Default color settings
-$theme-color:       {{ $.Site.Params.theme_color | default "#42A8C0" }};
+$theme-color:       {{ $.Site.Params.themeColor | default "#42A8C0" }};
 $text-color:        #333333;
 $text-second-color: #3F4650;
 $text-third-color:  #97AAC3;
