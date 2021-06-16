@@ -1,6 +1,5 @@
-{{ $basic := .Site.Data.data.basic }}
+{{ $basic := .basic }}
 <section class="basic">
-
     {{ if $basic.avatar.path | and $basic.avatar.display }}
     <div class="avatar">
         <img src='/images/{{ $basic.avatar.path }}' alt="avatar">
@@ -38,5 +37,4 @@
         </div>
     </div>
     {{ end }}
-
 </section>

@@ -1,7 +1,6 @@
-{{ $interests := .Site.Data.data.interests }}
+{{ $interests := .interests }}
 {{ if $interests | and $interests.display }}
 <section class="interests">
-
     <div class="section-title">
         {{ $interests.title }}
     </div>
@@ -19,6 +18,5 @@
             {{ end }}
         </ul>
     </div>
-
 </section>
 {{ end }}

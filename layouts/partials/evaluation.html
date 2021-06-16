@@ -1,7 +1,6 @@
-{{ $evaluation := .Site.Data.data.evaluation }}
+{{ $evaluation := .evaluation }}
 {{ if $evaluation | and $evaluation.display }}
 <section class="evaluation">
-
     <div class="section-title">
         {{ $evaluation.title }}
     </div>
@@ -13,6 +12,5 @@
             </div>
         </div>
     </div>
-
 </section>
 {{ end }}

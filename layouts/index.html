@@ -1,21 +1,22 @@
 {{ define "main" }}
+    {{ $data := .Site.Data.data }}
     {{ if .Site.Params.open }}
     <div class="wrapper">
-        {{ partial "basic.html" . }}
-        {{ partial "profile.html" . }}
-        {{ partial "experiences.html" . }}
-        {{ partial "projects.html" . }}
-        {{ partial "skills.html" . }}
-        {{ partial "education.html" . }}
-        {{ partial "certificates.html" . }}
-        {{ partial "publications.html" . }}
-        {{ partial "patents.html" . }}
-        {{ partial "language.html" . }}
-        {{ partial "interests.html" . }}
-        {{ partial "evaluation.html" . }}
+        {{ partial "basic.html" $data }}
+        {{ partial "profile.html" $data }}
+        {{ partial "experiences.html" $data }}
+        {{ partial "projects.html" $data }}
+        {{ partial "skills.html" $data }}
+        {{ partial "education.html" $data }}
+        {{ partial "certificates.html" $data }}
+        {{ partial "publications.html" $data }}
+        {{ partial "patents.html" $data }}
+        {{ partial "language.html" $data }}
+        {{ partial "interests.html" $data }}
+        {{ partial "evaluation.html" $data }}
     </div>
-    {{ partial "footer.html" . }}
+    {{ partial "footer.html" $data }}
     {{ else }}
-    {{ partial "close.html" . }}
+    {{ partial "close.html" $data }}
     {{ end }}
 {{ end }}

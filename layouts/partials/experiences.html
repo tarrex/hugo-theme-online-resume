@@ -1,4 +1,4 @@
-{{ $experiences := .Site.Data.data.experiences }}
+{{ $experiences := .experiences }}
 {{ if $experiences | and $experiences.display }}
 <section class="experiences">
     <div class="section-title">
@@ -23,7 +23,6 @@
                 <div class="role">{{ $experience.role }}</div>
                 <div class="location"><i class="fas fa-map-marker-alt"></i> {{ $experience.location }}</div>
             </div>
-
 
             {{ if $experience.details }}
             <div class="details">

@@ -1,7 +1,6 @@
-{{ $certificates := .Site.Data.data.certificates }}
+{{ $certificates := .certificates }}
 {{ if $certificates | and $certificates.display }}
 <section class="certificates">
-
     <div class="section-title">
         {{ $certificates.title }}
     </div>

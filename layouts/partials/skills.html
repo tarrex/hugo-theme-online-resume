@@ -1,7 +1,6 @@
-{{ $skills := .Site.Data.data.skills }}
+{{ $skills := .skills }}
 {{ if $skills | and $skills.display }}
 <section class="skills">
-
     <div class="section-title">
         {{ $skills.title }}
     </div>
@@ -32,6 +31,5 @@
         {{ end }}
         {{ end }}
     </div>
-
 </section>
 {{ end }}

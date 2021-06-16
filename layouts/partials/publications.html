@@ -1,7 +1,6 @@
-{{ $publications := .Site.Data.data.publications }}
+{{ $publications := .publications }}
 {{ if $publications | and $publications.display }}
 <section class="publications">
-
     <div class="section-title">
         {{ $publications.title }}
     </div>
@@ -37,6 +36,5 @@
         </div>
         {{ end }}
     </div>
-
 </section>
 {{ end }}
