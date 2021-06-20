@@ -1,6 +1,7 @@
 {{ define "main" }}
     {{ $data := .Site.Data.data }}
     {{ if .Site.Params.open }}
+    {{ $data = merge $data (dict "themeColor" $.Site.Params.themeColor) }}
     <div class="wrapper">
         {{ partial "basic.html" $data }}
         {{ partial "profile.html" $data }}

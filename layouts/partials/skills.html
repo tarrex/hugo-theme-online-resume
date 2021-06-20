@@ -21,8 +21,8 @@
                     {{ range $level := $skills.levels }}
                     <tr>
                         <th scope="row"> {{ $level.name }} </th>
-                        <td style="--size: calc( {{ $level.level }} / 100 ); --color: {{ $.Site.Params.theme_color }}90;"></td>
-                        <td style="--size: calc( ( 100 - {{ $level.level }} ) / 100 ); --color: {{ $.Site.Params.theme_color }}40;"></td>
+                        <td style="--size: calc( {{ $level.level }} / 100 ); --color: {{ $.themeColor }}90;"></td>
+                        <td style="--size: calc( ( 100 - {{ $level.level }} ) / 100 ); --color: {{ $.themeColor }}40;"></td>
                     </tr>
                     {{ end }}
                 </tbody>
