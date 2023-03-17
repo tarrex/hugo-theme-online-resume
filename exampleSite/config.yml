@@ -21,6 +21,7 @@ params:
     umami:
       script:               # umami analytics script src
       websiteID:            # umami analytics website id
+      domains:              # umami analytics domains
 
   # Style
   textDirection: ltr        # text direction, 'ltr' or 'rtl'

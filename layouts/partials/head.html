@@ -34,9 +34,11 @@
 <!-- End Cloudflare Web Analytics -->
 {{- end }}
 
-{{- if .Site.Params.analytics.umami.script | and .Site.Params.analytics.umami.websiteID }}
+{{ $umami := .Site.Params.analytics.umami }}
+{{- if $umami.script | and $umami.websiteID }}
 <!-- Umami Web Analytics -->
-<script async defer src="{{ .Site.Params.analytics.umami.script }}"
-  data-website-id="{{ .Site.Params.analytics.umami.websiteID }}"></script>
+<script async defer src="{{ $umami.script }}"
+  data-website-id="{{ $umami.websiteID }}"
+  {{ if $umami.domains }} data-domains="{{ $umami.domains }}" {{ end }}></script>
 <!-- End Umami Web Analytics -->
 {{- end }}
