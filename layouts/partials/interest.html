@@ -1,0 +1,31 @@
+{{- $interest := .data.interest }}
+{{- if $interest | and $interest.show }}
+<section class="interest" style="order: {{ $interest.order | default 1 }}">
+  <div class="section-title">
+    <i class="section-icon fa-solid fa-hand-spock"></i>
+    <h2>{{ $interest.title }}</h2>
+  </div>
+
+  <div class="section-content">
+    {{- if $interest.description }}
+    <div class="description markdown">
+      {{ $interest.description | markdownify }}
+    </div>
+    {{- end }}
+
+    {{- if $interest.items }}
+    <div class="items">
+      {{- range $item := $interest.items }}
+      <div class="item">
+        {{- if $item.link }}
+        <a href="{{ $item.link }}" target="_blank">{{ $item.item }}</a>
+        {{- else }}
+        <span>{{ $item.item }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

@@ -1,0 +1,24 @@
+{{- if .Site.Params.open }}
+<div class="wrapper">
+  {{- partial "basic.html" . }}
+  {{- partial "profile.html" . }}
+  {{- partial "experience.html" . }}
+  {{- partial "project.html" . }}
+  {{- partial "skill.html" . }}
+  {{- partial "education.html" . }}
+  {{- partial "certificate.html" . }}
+  {{- partial "publication.html" . }}
+  {{- partial "award.html" . }}
+  {{- partial "patent.html" . }}
+  {{- partial "organization.html" . }}
+  {{- partial "language.html" . }}
+  {{- partial "interest.html" . }}
+  {{- partial "evaluation.html" . }}
+  {{- partial "reference.html" . }}
+</div>
+{{- if .Site.Params.siteFooter }}
+{{- partial "footer.html" . }}
+{{- end }}
+{{- else }}
+{{- partial "close.html" . }}
+{{- end }}

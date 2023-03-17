@@ -3,36 +3,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ if .Site.Params.open }}{{ .Site.Title }}{{ end }}">
 
-{{ if .Site.Params.open }}
+{{- if .Site.Params.open }}
 <title>{{ .Site.Title | safeHTML }}</title>
-{{ else }}
+{{- else }}
 <title>Online Resume</title>
-{{ end }}
+{{- end }}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
-{{ $themeScss := "sass/main.scss" }}
-{{ $options := (dict "targetPath" "css/main.css" "outputStyle" "compressed") }}
-{{ $themeCss := resources.Get $themeScss | resources.ExecuteAsTemplate $themeScss . | toCSS $options | minify | fingerprint }}
+<link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
+{{- $themeScss := "sass/main.scss" }}
+{{- $options := (dict "targetPath" "assets/css/main.css" "outputStyle" "compressed") }}
+{{- $themeCss := resources.Get $themeScss | resources.ExecuteAsTemplate $themeScss . | toCSS $options | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $themeCss.RelPermalink }}" integrity="{{ $themeCss.Data.Integrity }}">
 
-{{ if .Site.Params.analytics.google }}
-<!-- Global site tag (gtag.js) - Google Analytics -->
+{{- if .Site.Params.analytics.google }}
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.analytics.google }}"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', '{{ .Site.Params.analytics.google }}');
+  gtag('config', '{{ .Site.Params.analytics.google }}');
 </script>
-{{ end }}
+{{- end }}
 
-{{ if .Site.Params.analytics.cloudflare }}
+{{- if .Site.Params.analytics.cloudflare }}
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-    data-cf-beacon='{"token": "{{ .Site.Params.analytics.cloudflare }}"}'></script>
+  data-cf-beacon='{"token": "{{ .Site.Params.analytics.cloudflare }}"}'></script>
 <!-- End Cloudflare Web Analytics -->
-{{ end }}
+{{- end }}
+
+{{- if .Site.Params.analytics.umami.script | and .Site.Params.analytics.umami.websiteID }}
+<!-- Umami Web Analytics -->
+<script async defer src="{{ .Site.Params.analytics.umami.script }}" data-umami-site-id="{{ .Site.Params.analytics.umami.websiteID }}"></script>
+<!-- End Umami Web Analytics -->
+{{- end }}

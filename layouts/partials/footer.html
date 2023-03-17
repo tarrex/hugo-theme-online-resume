@@ -1,11 +1,6 @@
-{{ $footer := .footer }}
-{{ if $footer | and $footer.display }}
 <footer class="footer">
-    <div class="text-center">
-        <small class="copyright">Updated: {{ now.Format (.Site.Params.dateFormat | default "2006-01-02" ) }}
-            <span class="fa-solid fa-heart"></span> By
-            <a href="https://github.com/tarrex/hugo-theme-online-resume" target="_blank">Online-Resume</a>
-        </small>
-    </div>
+  <span>Updated:&nbsp;</span>
+  <span>{{ now.Format (.Site.Params.dateFormat | default "2006-01-02" ) }}</span>
+  <i class="fa-solid fa-heart fa-beat-fade"></i>
+  <a href="https://github.com/tarrex/online-resume" target="_blank">Online-Resume</a>
 </footer>
-{{ end }}

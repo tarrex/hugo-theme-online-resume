@@ -18,16 +18,59 @@ $spacing-unit:     20px !default;
 $content-width:    1000px !default;
 
 // Default color settings
-$theme-color:       {{ $.Site.Params.themeColor | default "#42A8C0" }};
 $text-color:        #333333;
 $text-second-color: #3F4650;
 $text-third-color:  #97AAC3;
 $background-color:  #f5f5f5;
 $wrapper-color:     #ffffff;
 $heart-color:       #fb866a;
+$theme-color:       {{ $.Site.Params.themeColor | default "#1DA1F2" }};
+
+// Default delimiter
+$contact-delimiter: "{{ $.Site.Params.contactDelimiter | default "·" }}";
 
 @import
-    "base",
-    "responsive",
-    "print"
+  "sanitize",
+  "base",
+  "icon",
+  "responsive",
+  "print"
 ;
+
+{{ if eq $.Site.Params.textDirection "rtl" }}
+body { direction: rtl; }
+{{ end }}
+
+section {
+  .section-title {
+    text-transform: {{ $.Site.Params.sectionTitle | default "uppercase" }};
+    justify-content: {{ $.Site.Params.sectionAlign | default "start" }};
+    border-bottom-style: {{ $.Site.Params.sectionLine | default "dashed" }};
+
+    {{ if $.Site.Params.sectionBackground }}
+    background-color: rgba($theme-color, 0.15);
+    {{ end }}
+
+    {{ if ne $.Site.Params.sectionIcon true }}
+    .section-icon { display: none; }
+    {{ end }}
+  }
+
+  {{ if $.Site.Params.linkIcon }}
+  .section-content {
+    .markdown, .items {
+      a::after {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font: var(--fa-font-solid);
+        content: "\f08e";
+        color: $text-third-color;
+        font-size: 0.625em;
+        margin: 0 0.375em;
+        text-decoration: none;
+      }
+    }
+  }
+  {{ end }}
+}
