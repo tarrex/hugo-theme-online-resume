@@ -1,6 +1,6 @@
 {{- $contact := .data.contact }}
-{{- $avatar := .data.basic.avatar.show }}
-<div class="contact" {{ if ne $avatar true }}style="justify-content: center;"{{ end }}>
+{{ if $contact }}
+<div class="contact" {{ if ne .data.basic.avatar.show true }}style="justify-content: center;"{{ end }}>
   {{- if $contact.location }}
   <div class="contact-item" title="location">
     <i class="fa-solid fa-location-dot"></i>
@@ -386,3 +386,4 @@
   </div>
   {{- end }}
 </div>
+{{- end }}
