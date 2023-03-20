@@ -314,9 +314,9 @@ patent:
     Including a patent section in your resume can help demonstrate your expertise and accomplishments in your field, and can help you stand out from other candidates. However, if you do not have any patents to list, it is not necessary to include this section in your resume.
 
     Template for a pending patent:
-    
+
     + [Inventor Name]. [Pursued Year]. [Title]. [Patent Number], filed [Submitted Date]. Patent pending.
-    
+
     Template for an approved patent:
 
     + [Inventor Name]. [Pursued Year]. [Title]. [Patent Number], filed [Submitted Date], [Received Date].
@@ -392,5 +392,26 @@ reference:
     When listing references, be sure to include the individual's name, job title, company name, phone number, and email address. It's also a good idea to ask for the individual's permission before listing them as a reference, and to let them know what kind of job you are applying for so they can speak to your relevant skills and experience.
 
     It's important to choose references who can provide a positive and comprehensive evaluation of your work. Avoid listing family members or friends as references, and instead focus on individuals who can speak to your professional abilities and accomplishments.
+
+  items:
+    - name: Foo One
+      link: '#'
+      title: Backend Developer
+      institution: Second Company
+      address: 1234 Example St, XXX, XY 11111
+      email: foo.one@example.com
+      phone: 111-222-333
+      description: |
+        Foo One was my colleague in Second Company.
+
+    - name: Bar Two
+      link:
+      title: Professor
+      institution: Example University
+      address: 4321 Example St, YYY, XY 22222
+      email: bar.two@example.com
+      phone: 444-555-666
+      description: |
+        Bar Two was my advisor at Example University.
 
 close: <strong>Sorry, my resume has been hidden.</strong>

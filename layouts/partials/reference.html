@@ -12,6 +12,56 @@
       {{ $reference.description | markdownify }}
     </div>
     {{- end }}
+
+    {{- if $reference.items }}
+    <div class="items">
+      {{- range $item := $reference.items }}
+      <div class="item">
+
+        {{- if $item.name }}
+        <div class="reference-name">
+          {{- if $item.link }}
+          <a href="{{ $item.link }}">{{ $item.name }}</a>
+          {{- else }}
+          <span>{{ $item.name }}</span>
+          {{- end }}
+        </div>
+        {{- if $item.title }}
+        <div class="reference-title">
+          <span>{{ $item.title }}</span>
+        </div>
+        {{- end }}
+        {{- if $item.institution }}
+        <div class="reference-institution">
+          <span>{{ $item.institution }}</span>
+        </div>
+        {{- end }}
+        {{- if $item.address }}
+        <div class="reference-address">
+          <span>{{ $item.address }}</span>
+        </div>
+        {{- end }}
+        {{- if $item.email }}
+        <div class="reference-email">
+          <a href="mailto:{{ $item.email }}">{{ $item.email }}</a>
+        </div>
+        {{- end }}
+        {{- if $item.phone }}
+        <div class="reference-phone">
+          <a href="tel:{{ $item.phone }}">{{ $item.phone }}</a>
+        </div>
+        {{- end }}
+        {{- if $item.description }}
+        <div class="description markdown">
+          {{ $item.description | markdownify }}
+        </div>
+        {{- end }}
+        {{- end }}
+
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
   </div>
 </section>
 {{- end }}
