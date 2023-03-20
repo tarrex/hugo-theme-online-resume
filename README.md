@@ -1,53 +1,75 @@
-# online-resume
+<h1 align="center">online-resume</h1>
 
-[English](README.md) | [简体中文](README_CN.md)
+<p align="center">
+  <a href="https://github.com/tarrex/hugo-theme-online-resume/blob/master/LICENSE"><img src="https://img.shields.io/github/license/tarrex/hugo-theme-online-resume?style=flat-square" alt="GitHub License"></a>
+  <a href="https://github.com/tarrex/hugo-theme-online-resume/forks"><img src="https://img.shields.io/github/forks/tarrex/hugo-theme-online-resume?style=flat-square" alt="GitHub forks"></a>
+  <a href="https://github.com/tarrex/hugo-theme-online-resume/stargazers"><img src="https://img.shields.io/github/stars/tarrex/hugo-theme-online-resume?style=flat-square" alt="GitHub Repo stars"></a>
+  <a href="https://tarrex.github.io/online-resume"><img src="https://img.shields.io/website?down_color=red&down_message=down&style=flat-square&up_color=green&up_message=up&url=https%3A%2F%2Ftarrex.github.io%2Fonline-resume" alt="Demo Website"></a>
+</p>
+
+<h4 align="center">A minimalist Hugo theme for your resume.</h4>
 
 ---
 
-Yet another resume template based on Hugo. You can write your resume using Markdown, it will be rendered into HTML and can be printed as PDF file.
+## Live Demo
 
-Features:
-
-+ Easy to use/edit/hide
-+ Hugo + Markdown
-+ Multiple languages
-+ Multiple skins
-+ Content modular
-+ Responsive display
-+ Print-friendly
+:point_right: [online-resume][Demo] :point_left:
 
 ## Getting Started
 
+Online-Resume is a Hugo theme designed for creating resumes. It enables you to write your resume in YAML file using Markdown and manage it through Git. It can be displayed on a web page and printed as a PDF file directly from the browser.
+
+You can deploy it on various platforms that support Hugo or static files, such as GitHub Pages, Cloudflare Pages, Vercel, Netlify, your own hosting service, and others.
+
+Features:
+
+- User-friendly and easy to deploy.
+- Built with Hugo and Markdown.
+- Supports multiple languages.
+- Customizable theme color and basic styles.
+- Modular content design.
+- Responsive display.
+
 ### Usage
 
-+ Create new hugo site and add the theme by git submodule.
-  + `hugo new site resume`
-  + `cd resume && git init`
-  + `git submodule add git@github.com:tarrex/hugo-theme-online-resume.git themes/online-resume`
+#### Quickly
 
-+ Copy `config.yml` and `data.yml` files.
+- Create new hugo site and add the theme through git submodule.
+  - `hugo new site resume`
+  - `cd resume && git init`
+  - `git submodule add git@github.com:tarrex/hugo-theme-online-resume.git themes/online-resume`
+- Copy `config.yml` and `data.yml` files.
+  - `cp themes/online-resume/exampleSite/config.yml .`
+  - `cp themes/online-resume/exampleSite/data/data.yml ./data`
+- Edit `data/data.yml` file directly to update your resume.
+- Run `hugo server` and open in browser to preview the resume.
 
-  + `cp themes/online-resume/exampleSite/config.yml .`
-  + `cp themes/online-resume/exampleSite/data/data.yml ./data`
+#### Customization
 
-+ Edit `data/data.yml` file to update your resume.
+- `data/data.yml`: Edit the resume content.
+- `static/images/profile.png`: Your profile photo.
+- `config.yml`: Website and theme style settings.
 
-+ use `hugo server -w` and open in browser to check the resume.
+## FAQ
 
-with profile photo:
+#### How to change the order of the sections in the resume?
 
-![](images/resume1.png "resume with profile photo")
+There is an `order` option in each section, you can adjust the order by modifying this, the smaller the value the more forward the position.
 
-without profile photo:
+#### How to hide the specified section in the resume?
 
-![](images/resume2.png "resume without profile photo")
+If there is no content you want to keep in the section, you can remove it directly. If you want to keep the content, you can set the value of the `show` option of the section to `false`.
 
-If you want to print your resume, just press the shortcut of print. Also, it can be saved as a PDF file.
+#### How to deploy on other platforms, like cloudflare, vercel?
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+You can read and follow [Cloudflare Pages][Cloudflare Pages], [Vercel][Vercel] documents.
 
 ## Others
 
-+ Jekyll Version: [online-resume](https://github.com/tarrex/online-resume)
+- Jekyll Version: [online-resume][Other Version]
+
+
+[Demo]: https://tarrex.github.io/online-resume
+[Cloudflare Pages]: https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site/
+[Vercel]: https://vercel.com/guides/deploying-hugo-with-vercel
+[Other Version]: https://github.com/tarrex/online-resume
