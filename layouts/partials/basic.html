@@ -2,9 +2,7 @@
 {{- if $basic }}
 <section class="basic">
   {{- if $basic.avatar.show | and $basic.avatar.path }}
-  <div class="avatar">
-    <img src="{{ $basic.avatar.path }}" alt="avatar">
-  </div>
+  <img class="avatar" src="{{ $basic.avatar.path }}" alt="avatar">
   {{- end }}
 
   <div class="header" {{ if ne $basic.avatar.show true }}style="align-items: center;"{{ end }}>
