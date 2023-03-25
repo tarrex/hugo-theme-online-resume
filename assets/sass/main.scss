@@ -32,7 +32,6 @@ $contact-delimiter: "{{ $.Site.Params.contactDelimiter | default "·" }}";
 @import
   "sanitize",
   "base",
-  "icon",
   "responsive",
   "print"
 ;
