@@ -22,6 +22,10 @@ params:
       script:               # umami analytics script src
       websiteID:            # umami analytics website id
       domains:              # umami analytics domains
+  description:
+  openGraph:
+    enable: true                # enable open graph meta tags
+    image: /images/profile.png  # open graph image path
 
   # Style
   textDirection: ltr        # text direction, 'ltr' or 'rtl'
