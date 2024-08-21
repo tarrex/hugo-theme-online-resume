@@ -24,7 +24,7 @@
 
   {{- if $contact.phone }}
   {{- $text := $contact.phone }}
-  {{- $link := (print "tel:" $text) }}
+  {{- $link := (print "tel:" $text) | safeURL }}
   <div class="contact-item" title="Phone number">
     <i class="fa-solid fa-phone"></i>
     <a href="{{ $link }}" title="{{ $link }}">{{ $text }}</a>
