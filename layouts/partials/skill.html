@@ -9,7 +9,7 @@
   <div class="section-content">
     {{- if $skill.description }}
     <div class="description markdown">
-      {{ $skill.description | markdownify }}
+      {{ $skill.description | markdownify | safeHTML }}
     </div>
     {{- end }}
 
@@ -18,15 +18,15 @@
       {{- range $item := $skill.items }}
       <div class="item">
         <div class="skill-name">
-          <span>{{ $item.name | safeHTML  }}</span>
+          <span>{{ $item.name | safeHTML }}</span>
         </div>
         <div class="skill-level">
           {{- range $i := (seq 5) }}
           {{- with $.Site }}
           {{- if le $i $item.level }}
-          <i class="fa-solid fa-{{ .Params.skillLevelIcon | default "star" }}"></i>
+          <i class='fa-solid fa-{{ .Params.skillLevelIcon | default "star" }}'></i>
           {{- else }}
-          <i class="fa-regular fa-{{ .Params.skillLevelIcon | default "star" }}"></i>
+          <i class='fa-regular fa-{{ .Params.skillLevelIcon | default "star" }}'></i>
           {{- end }}
           {{- end }}
           {{- end }}
@@ -41,7 +41,7 @@
       {{- range $group := $skill.groups }}
       <div class="group">
         <div class="group-name">
-          <span>{{ $group.name | safeHTML  }}</span>
+          <span>{{ $group.name | safeHTML }}</span>
         </div>
         <div class="group-item">
           {{- range $item := $group.item }}

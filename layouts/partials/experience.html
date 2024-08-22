@@ -9,7 +9,7 @@
   <div class="section-content">
     {{- if $experience.description }}
     <div class="description markdown">
-      {{ $experience.description | markdownify }}
+      {{ $experience.description | markdownify | safeHTML }}
     </div>
     {{- end }}
 
@@ -22,9 +22,9 @@
         <div class="row">
           <div class="company">
             {{- if $item.link }}
-            <a href="{{ $item.link }}" target="_blank">{{ $item.company }}</a>
+            <a href="{{ $item.link }}" target="_blank">{{ $item.company | safeHTML }}</a>
             {{- else }}
-            <span>{{ $item.company }}</span>
+            <span>{{ $item.company | safeHTML }}</span>
             {{- end }}
             {{- if $item.tags }}
             <small>[{{ $item.tags }}]</small>
@@ -39,15 +39,17 @@
           <div class="role">
             <span>{{ $item.role }}</span>
           </div>
+          {{- if $item.location }}
           <div class="location">
             <i class="fa-solid fa-location-dot"></i>
             <span>{{ $item.location }}</span>
           </div>
+          {{- end }}
         </div>
 
         {{- if $item.description }}
         <div class="description markdown">
-          {{ $item.description | markdownify }}
+          {{ $item.description | markdownify | safeHTML }}
         </div>
         {{- end }}
         {{- end }}

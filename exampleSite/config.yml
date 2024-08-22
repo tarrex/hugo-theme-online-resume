@@ -1,7 +1,6 @@
 baseURL:
 disableKinds: [section, taxonomy, term, RSS, sitemap, 404]
 enableRobotsTXT: true
-languageCode: en
 
 title: Online Resume
 theme: online-resume
@@ -25,10 +24,9 @@ params:
   description:
   openGraph:
     enable: true                # enable open graph meta tags
-    image: /images/profile.png  # open graph image path
+    image: /images/profile.png  # path or link to the open graph image
 
   # Style
-  textDirection: ltr        # text direction, 'ltr' or 'rtl'
   dateFormat: 2006-01-02    # date format
   themeColor: "#1DA1F2"     # your favorite theme color
   contactDelimiter: "·"     # contact delimiter, '·', '/' or '|'

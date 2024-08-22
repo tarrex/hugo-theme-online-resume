@@ -1,4 +1,6 @@
-<footer class="footer">
+<footer class="footer"
+  lang='{{ .data.meta.language | default "en" }}'
+  dir='{{ .data.meta.direction | default "ltr" }}'>
   <span>Updated:&nbsp;</span>
   <span>{{ now.Format (.Site.Params.dateFormat | default "2006-01-02" ) }}</span>
   <i class="fa-solid fa-heart fa-beat-fade"></i>

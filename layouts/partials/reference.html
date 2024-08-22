@@ -9,7 +9,7 @@
   <div class="section-content">
     {{- if $reference.description }}
     <div class="description markdown">
-      {{ $reference.description | markdownify }}
+      {{ $reference.description | markdownify | safeHTML }}
     </div>
     {{- end }}
 
@@ -53,7 +53,7 @@
         {{- end }}
         {{- if $item.description }}
         <div class="description markdown">
-          {{ $item.description | markdownify }}
+          {{ $item.description | markdownify | safeHTML }}
         </div>
         {{- end }}
         {{- end }}

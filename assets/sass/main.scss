@@ -33,12 +33,9 @@ $contact-delimiter: "{{ $.Site.Params.contactDelimiter | default "·" }}";
   "sanitize",
   "base",
   "responsive",
-  "print"
+  "print",
+  "fonts"
 ;
-
-{{ if eq $.Site.Params.textDirection "rtl" }}
-body { direction: rtl; }
-{{ end }}
 
 section {
   .section-title {

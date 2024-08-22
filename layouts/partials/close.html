@@ -1,8 +1,7 @@
 <div class="close">
   {{- if .data.close }}
   <div class="description">
-    {{ .data.close | safeHTML }}
+    {{ .data.close | markdownify | safeHTML }}
   </div>
   {{- end }}
-  <a href="javascript:history.go(-1)">Back</a>
 </div>

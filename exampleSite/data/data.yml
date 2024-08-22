@@ -1,9 +1,13 @@
+meta:
+  direction: ltr            # text direction, "ltr" (like English) or "rtl" (like Arabic), default is "ltr"
+  language: en              # text language, the value is HTML lang attribute value, default is "en"
+
 basic:
   name: Foo Bar                      # name
-  title: Backend Developer           # job title
+  title: Backend Developer           # job title 
   avatar:
     show: true                       # show or hide avatar
-    path: /images/profile.png        # avatar file path
+    path: /images/profile.png        # file path or link to your avatar
 
 contact:
   location: Beijing, China  # location, text or markdown link syntax

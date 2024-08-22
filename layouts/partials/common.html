@@ -1,5 +1,7 @@
 {{- if .Site.Params.open }}
-<div class="wrapper">
+<div class="wrapper"
+  lang='{{ .data.meta.language | default "en" }}'
+  dir='{{ .data.meta.direction | default "ltr" }}'>
   {{- partial "basic.html" . }}
   {{- partial "profile.html" . }}
   {{- partial "experience.html" . }}

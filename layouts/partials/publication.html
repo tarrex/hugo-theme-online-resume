@@ -9,7 +9,7 @@
   <div class="section-content">
     {{- if $publication.description }}
     <div class="description markdown">
-      {{ $publication.description | markdownify }}
+      {{ $publication.description | markdownify | safeHTML }}
     </div>
     {{- end }}
 
@@ -21,15 +21,15 @@
         {{- if $item.title }}
         <div class="publication-title">
           {{- if $item.link }}
-          <a href="{{ $item.link }}" target="_blank">{{ $item.title }}</a>
+          <a href="{{ $item.link }}" target="_blank">{{ $item.title | markdownify | safeHTML }}</a>
           {{- else }}
-          <span>{{ $item.title }}</span>
+          <span>{{ $item.title | markdownify | safeHTML }}</span>
           {{- end }}
         </div>
 
         {{- if $item.authors }}
         <div class="authors">
-          <span>{{ $item.authors | safeHTML }}</span>
+          <span>{{ $item.authors | markdownify | safeHTML }}</span>
         </div>
         {{- end }}
 

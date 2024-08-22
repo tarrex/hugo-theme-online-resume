@@ -9,7 +9,7 @@
   <div class="section-content">
     {{- if $education.description }}
     <div class="description markdown">
-      {{ $education.description | markdownify }}
+      {{ $education.description | markdownify | safeHTML }}
     </div>
     {{- end }}
 
@@ -22,9 +22,9 @@
         <div class="row">
           <div class="institution">
             {{- if $item.link }}
-            <a href="{{ $item.link }}" target="_blank">{{ $item.institution }}</a>
+            <a href="{{ $item.link }}" target="_blank">{{ $item.institution | safeHTML }}</a>
             {{- else }}
-            <span>{{ $item.institution }}</span>
+            <span>{{ $item.institution | safeHTML }}</span>
             {{- end }}
           </div>
           <div class="date">
@@ -36,15 +36,17 @@
           <div class="major">
             <span>{{ $item.major }}</span>
           </div>
+          {{- if $item.degree }}
           <div class="degree">
             <i class="fa-solid fa-graduation-cap"></i>
             <span>{{ $item.degree }}</span>
           </div>
+          {{- end }}
         </div>
 
         {{- if $item.description }}
         <div class="description markdown">
-          {{ $item.description | markdownify }}
+          {{ $item.description | markdownify | safeHTML }}
         </div>
         {{- end }}
         {{- end }}

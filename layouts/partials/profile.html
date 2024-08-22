@@ -9,7 +9,7 @@
   <div class="section-content">
     {{- if $profile.description }}
     <div class="description markdown">
-      {{ $profile.description | markdownify }}
+      {{ $profile.description | markdownify | safeHTML }}
     </div>
     {{- end }}
   </div>

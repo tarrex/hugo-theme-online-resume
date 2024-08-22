@@ -63,10 +63,10 @@ If there is no content you want to keep in the section, you can remove it direct
 #### How to create a resume in other languages?
 
 For example, if you already have an English version resume and you want to create a Chinese version.
-  - Copy a `data.yml` file in the `_data` folder named `cn.yml` and edit the content.
+  - Copy a `data.yml` file in the `data` folder named `cn.yml` and edit the content.
   - Create `layouts/page` directories through `mkdir -p layouts/page`.
-  - Copy `index.html` file in the theme layouts directory to above directory `cp themes/online-resume/layouts/index.html layouts/page`
-  - Rename `index.html` to `cn.html` and change the `{{- partial "common.html" (dict "Site" .Site "data" .Site.Data.data) }}` in the `cn.html` to `{{- partial "common.html" (dict "Site" .Site "data" .Site.Data.cn) }}`.
+  - Copy `index.html` file in the theme layouts directory to above directory `cp themes/online-resume/layouts/index.html layouts/page/cn.html`
+  - Change the `{{- partial "common.html" (dict "Site" .Site "data" .Site.Data.data) }}` in the `cn.html` to `{{- partial "common.html" (dict "Site" .Site "data" .Site.Data.cn) }}`.
   - Create `content` directory in root directory and create a markdown file named `cn.md`, add fromt matter `layout: cn` in `cn.md`.
   - Run `hugo server` and you can preview the Chinese version of your resume by visiting `https://YOUR_RESUME_URL/cn`.
 
