@@ -5,27 +5,16 @@ enableRobotsTXT: true
 title: Online Resume
 theme: online-resume
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true          # allow HTML tags in markdown
+markup/goldmark/renderer/unsafe: true   # allow HTML tags in markdown
 
 params:
-  # Custom
+  # Privacy
   open: true                # show or hide your resume
   allowSearchEngines: true  # allow your resume indexing by search engine, 'true' or 'false'
-  analytics:
-    google:                 # google analytics
-    cloudflare:             # cloudflare analytics
-    umami:
-      script:               # umami analytics script src
-      websiteID:            # umami analytics website id
-      domains:              # umami analytics domains
-  description:
+  description:              # your resume description
   openGraph:
     enable: true                # enable open graph meta tags
     image: /images/profile.png  # path or link to the open graph image
-
   # Style
   dateFormat: 2006-01-02    # date format
   themeColor: "#1DA1F2"     # your favorite theme color
@@ -38,3 +27,11 @@ params:
   skillLevelIcon: lightbulb # skill rate icon, 'heart', 'star', 'circle' or 'lightbulb'
   linkIcon: true            # show link icon, 'true' or 'false'
   siteFooter: true          # show site footer, 'true' or 'false'
+  # Analytics
+  analytics:
+    google:                 # google
+    cloudflare:             # cloudflare
+    umami:                  # umami
+      script:
+      websiteID:
+      domains:

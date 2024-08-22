@@ -1,7 +1,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{{ if .Site.Params.open }}{{ .Site.Title }}{{ end }}">
+<meta name="description" content="{{ if .Site.Params.open }}{{ if .Site.Params.description }}{{ .Site.Params.description }}{{ else }}{{ .Site.Title }}{{ end }}{{ else }}Online Resume{{ end }}">
+
+{{- if and .Site.Params.open .Site.Params.openGraph.enable }}
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:type" content="profile">
+<meta property="og:image" content='{{ with .Site.Params.openGraph.image }}{{ if ne (slicestr . 0 1) "/" }}{{ . }}{{ else }}{{ absURL . }}{{ end }}{{ end }}'>
+<meta property="og:url" content="{{ .Permalink }}">
+{{- if .Site.Params.description }}
+<meta property="og:description" content="{{ .Site.Params.description }}">
+{{- end }}
+{{- end }}
 
 {{- if .Site.Params.open }}
 <title>{{ .Site.Title | safeHTML }}</title>
