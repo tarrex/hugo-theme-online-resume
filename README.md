@@ -39,7 +39,7 @@ Features:
   - `cd resume && git init`
   - `git submodule add git@github.com:tarrex/hugo-theme-online-resume.git themes/online-resume`
 - Copy `config.yml` and `data.yml` files.
-  - `cp themes/online-resume/exampleSite/config.yml .`
+  - `cp themes/online-resume/exampleSite/hugo.yml .`
   - `cp themes/online-resume/exampleSite/data/data.yml ./data`
 - Edit `data/data.yml` file directly to update your resume.
 - Run `hugo server` and open in browser to preview the resume.

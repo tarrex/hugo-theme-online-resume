@@ -8,7 +8,7 @@ description = "online resume template based on Hugo."
 homepage = "https://github.com/tarrex/hugo-theme-online-resume"
 tags = ["resume", "responsive", "markdown"]
 features = ["markdown"]
-min_version = "0.57.1"
+min_version = "0.109.0"
 
 [author]
   name = "tarrex"
